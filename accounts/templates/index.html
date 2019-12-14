@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django Auth</title>
+</head>
+<body>
+    <h1>Django authentication Home (index.html)</h1>
+    <nav>
+      <li><a href="{% url 'login' %}">LOGIN</a></li>
+      <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+      <li><a href="#">REGISTER</a></li>
+      <li><a href="#">PROFILE</a></li>
+    </nav>
+    <h3> {% if messages %}
+     <div>
+        {% for message in messages %} {{ message }} {% endfor %}
+     </div>
+    {% endif %}
+    </h3>
+</body>
+</html>
