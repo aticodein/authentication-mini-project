@@ -26,7 +26,7 @@ SECRET_KEY = 'd6f8d)(k)e(p8cv2js-2y4l2p=k(wqz)6cl9qi%v81%ac0g6s^'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost', os.environ.get("C9_HOSTNAME")
+    'localhost', os.environ.get("C9_HOSTNAME"), '78.152.212.140'
 ]
 
 
