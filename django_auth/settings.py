@@ -26,7 +26,7 @@ SECRET_KEY = 'd6f8d)(k)e(p8cv2js-2y4l2p=k(wqz)6cl9qi%v81%ac0g6s^'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
+    'localhost', os.environ.get("C9_HOSTNAME")
 ]
 
 
@@ -123,3 +123,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_PORT = 587
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.EmailAuth',
+]
