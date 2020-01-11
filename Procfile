@@ -1,1 +1,1 @@
-web: gunicorn authentication_mini_project.wsgi
+web: gunicorn authentication-mini-project.wsgi
