@@ -25,9 +25,7 @@ SECRET_KEY = 'd6f8d)(k)e(p8cv2js-2y4l2p=k(wqz)6cl9qi%v81%ac0g6s^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost', os.environ.get("C9_HOSTNAME"), 'authentication-mini-project.herokuapp.com'
-]
+ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"), '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_forms_bootstrap',
     'accounts',
 ]
 
@@ -121,6 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
